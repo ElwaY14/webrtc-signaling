@@ -9,6 +9,5 @@ const server = app.listen(PORT, () => {
   console.log(`HTTP server listening on ${PORT}`);
 });
 
-PeerServer({ port: PORT, path: '/peerjs', server, allow_discovery: true });
-
+PeerServer({ path: '/peerjs', server, allow_discovery: true });
 process.on('SIGTERM', () => server.close(() => process.exit(0)));
